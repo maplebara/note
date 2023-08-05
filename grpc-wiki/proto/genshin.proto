@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package maple.note.genshi;
+
+option go_package = "./proto";
+
+message GenshiRequest {
+  int32 id = 1;
+}
+
+message GenshiResponse {
+  int32  code = 1;
+  string message = 2;
+  string body = 3;
+}
+
+service SearchService {
+  rpc Search(GenshiRequest) returns (GenshiResponse);
+}
